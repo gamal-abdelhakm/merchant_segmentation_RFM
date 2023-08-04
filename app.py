@@ -2,21 +2,8 @@ import pandas as pd
 from sklearn.cluster import KMeans
 import streamlit as st
 
-# Load the data from Cleaned_Data_Merchant_Level.csv
-data = pd.read_csv('Cleaned_Data_Merchant_Level.csv')
-
-# Perform RFM Clustering
-rfm_data = data[['Trx_Rank', 'Trx_Age', 'Customer_Age']].copy()
-
-# Normalize the data
-rfm_data = (rfm_data - rfm_data.mean()) / rfm_data.std()
-
-# Define the number of clusters for KMeans
-num_clusters = 5
-
-# Fit the KMeans model
-kmeans = KMeans(n_clusters=num_clusters, random_state=42)
-data['Cluster'] = kmeans.fit_predict(rfm_data)
+# Load the data from updated.csv
+data = pd.read_csv('updated.csv')
 
 def get_recommendations(user_id):
     # Get the cluster of the given User_Id
