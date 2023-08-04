@@ -6,7 +6,7 @@ import streamlit as st
 data = pd.read_csv('Cleaned_Data_Merchant_Level.csv')
 
 # Perform RFM Clustering
-rfm_data = data[['Trx_Rank', 'Trx_Age', 'Customer_Age']].copy()
+rfm_data = data[['Trx_Rank', 'Trx_Age', 'Customer_Age']]
 
 # Normalize the data
 rfm_data = (rfm_data - rfm_data.mean()) / rfm_data.std()
@@ -47,7 +47,7 @@ def get_recommendations(user_id):
         merchant_transactions = merchant_transactions.sort_values(by='Trx_Rank', ascending=False)
         
         # Get the top three merchants
-        top_merchants = merchant_transactions['Mer_Id'].head(3).tolist()
+        top_merchants = merchant_transactions['Mer_Id'].head(2).tolist()
         
         recommendations.append((category, top_merchants))
     
