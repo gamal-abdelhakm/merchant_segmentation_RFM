@@ -10,8 +10,6 @@ This repository implements a recommendation system based on Customer Segmentatio
 - [Features](#features)
 - [Data Sources](#data-sources)
 - [Technologies Used](#technologies-used)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
 
 ## Installation
 
